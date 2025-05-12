@@ -4,23 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biology for Kids</title>
-    <link rel="stylesheet" href="styles.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-    <header>
-        <h1>Welcome to Biology for Kids!</h1>
-        <nav>
-            <a href="quiz.html">Take the Quiz</a>
-        </nav>
-    </header>
-    <main>
-        <section>
-            <h2>Discover the Amazing World of Biology</h2>
-            <p>Explore fun facts about plants, animals, and the human body.</p>
-        </section>
-    </main>
-    <footer>
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Biology for Kids</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="quiz.html">Take the Quiz</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="jumbotron text-center p-5 bg-info text-white rounded">
+            <h1>Welcome to Biology for Kids!</h1>
+            <p>Explore the wonders of plants, animals, and the human body in a fun and engaging way.</p>
+        </div>
+    </div>
+
+    <footer class="text-center mt-4 p-3 bg-success text-white">
         <p>© 2025 Biology for Kids</p>
     </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

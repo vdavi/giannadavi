@@ -1,15 +1,10 @@
 function checkAnswer(answer) {
+    const resultElement = document.getElementById("result");
     if (answer === 'A') {
-        document.getElementById("result").innerText = "Correct! Plants use photosynthesis.";
+        resultElement.innerText = "✅ Correct! Plants use photosynthesis.";
+        resultElement.classList.add("text-success");
     } else {
-        document.getElementById("result").innerText = "Try again!";
+        resultElement.innerText = "❌ Try again!";
+        resultElement.classList.add("text-danger");
     }
 }
-
-/*
-git init
-git remote add origin {remote_repository_url}
-git add .
-git commit -m "Initial commit"
-git push -u origin main
-*/
