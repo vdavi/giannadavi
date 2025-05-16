@@ -62,7 +62,7 @@ function nextQuestion() {
             showFinalResult();
         }
     }, 2000);
-}
+
 
     feedbackImage.classList.remove("d-none");
 
