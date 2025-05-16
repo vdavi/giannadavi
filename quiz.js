@@ -30,39 +30,17 @@ function loadQuestion() {
 function nextQuestion() {
     const feedbackImage = document.getElementById("feedback-image");
     const userAnswers = document.querySelectorAll(`input[name="q${currentQuestion}"]:checked`);
-    
-    // Convert selected options to an array of values
     let userResponse = Array.from(userAnswers).map(input => input.value);
 
     let correctAnswer = questions[currentQuestion].answer;
-    let isCorrect = false;
+    let isCorrect = Array.isArray(correctAnswer) ? JSON.stringify(userResponse.sort()) === JSON.stringify(correctAnswer.sort()) : userResponse[0] === correctAnswer;
 
-    // Check if answer is correct (for multiple-choice and checkbox questions)
-    if (Array.isArray(correctAnswer)) {
-        isCorrect = JSON.stringify(userResponse.sort()) === JSON.stringify(correctAnswer.sort());
-    } else {
-        isCorrect = userResponse.length > 0 && userResponse[0] === correctAnswer;
-    }
-
-    // Show correct or incorrect feedback image
-    feedbackImage.src = isCorrect ? "images/correctanswer.png" : "images/incorrectanswer.png";
-    feedbackImage.classList.remove("d-none");
-
-    // Increase score if correct
     if (isCorrect) {
         score++;
+        feedbackImage.src = "images/correctanswer.png";
+    } else {
+        feedbackImage.src = "images/incorrectanswer.png";
     }
-
-    // Move to the next question after 2 seconds
-    setTimeout(() => {
-        currentQuestion++;
-        if (currentQuestion < questions.length) {
-            loadQuestion();
-        } else {
-            showFinalResult();
-        }
-    }, 2000);
-
 
     feedbackImage.classList.remove("d-none");
 
